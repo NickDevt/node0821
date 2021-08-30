@@ -2,11 +2,11 @@
   "name": "project_1",
   "version": "1.0.0",
   "description": "This is first new project of node stack for learning",
-  "main": "index.js",
+  "main": "2_16_simple_rest_server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node lesson1.js",
-    "dev": "nodemon lesson1.js"
+    "start": "node 2_14_simple_server.js",
+    "dev": "nodemon 2_14_simple_server.js"
   },
   "author": "",
   "license": "ISC",

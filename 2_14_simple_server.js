@@ -62,8 +62,8 @@ server.listen(3000, () => {
 //В нашем случае регаем 2 скрипта для обычного запуска сервера и запуска через nodemon
 // "scripts": {
 //     "test": "echo \"Error: no test specified\" && exit 1",
-//         "start": "node lesson1.js",
-//         "dev": "nodemon lesson1.js"
+//         "start": "node 2_14_simple_server.js",
+//         "dev": "nodemon 2_14_simple_server.js"
 // }
 //Теперь мы можем запустить их соответствующей командой пример nodemon lesson1.json
 //Если nodemon не распознается - надо установить его глобально npm install -g nodemon
