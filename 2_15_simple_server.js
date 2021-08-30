@@ -9,15 +9,15 @@ const server = http.createServer((req, res) => {
     if (req.method === 'GET'){
         res.writeHead(200, {
             'Content-type':'text/html; charset=utf-8'
-            })
+        })
         if (req.url === '/') {
             fs.readFile(path.join(__dirname, 'views', 'index.html'),
                 'utf-8',
                 (err, content) => {
-                if (err) {
-                    throw err
-                }
-                res.end(content)
+                    if (err) {
+                        throw err
+                    }
+                    res.end(content)
                 }
             )
         }  else if (req.url === '/about'){
@@ -49,7 +49,7 @@ const server = http.createServer((req, res) => {
             const message = body.toString().split('=')[1]
 
 
-        res.end(`
+            res.end(`
         <h1>Сообщение получено: ${message}</h1>`)
         })
     }
