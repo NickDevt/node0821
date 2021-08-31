@@ -1,0 +1,26 @@
+<nav>
+    <div class="nav-wrapper indigo accent-3">
+        <a href="#" class="brand-logo">Database</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+            {{#if isHome}}
+                <li class="active"><a href="/">Главная страница</a></li>
+            {{else}}
+                <li><a href="/">Главная страница</a></li>
+            {{/if}}
+
+            {{#if isankets}}
+                <li class="active"><a href="/ankets">Анкеты</a></li>
+            {{else}}
+                <li><a href="/ankets">Анкеты</a></li>
+            {{/if}}
+
+            {{#if isadd}}
+                <li class="active"><a href="/add">Добавить анкету</a> </li>
+            {{else}}
+                <li><a href="/add">Добавить анкету</a> </li>
+            {{/if}}
+
+        </ul>
+    </div>
+</nav>
