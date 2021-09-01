@@ -2,7 +2,7 @@
 const { v4: uuid } = require('uuid');
 const fs = require('fs')
 const path = require('path')
-const {response, json} = require("express");
+const {response, json, static} = require("express");
 
 class Anket {
     constructor(firstName, secondName, email, img) {
@@ -71,5 +71,11 @@ class Anket {
 
 
     }
+
+    static async getById(id) {
+        const courses = await Anket.getAll()
+        return courses.find(c => c.id === id)
+    }
+
 }
 module.exports = Anket
