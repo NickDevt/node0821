@@ -1,1 +1,32 @@
 <h1>Анкеты</h1>
+
+<!--<p class="price">600000</p>-->
+
+{{#if ankets.length}}
+    {{#each ankets}}
+    <div class="col s12 m7">
+
+        <div class="card horizontal">
+            <div class="card-image wrapper exmpl">
+                <img class="responsive-img crop_img_size"  src="{{img}}" alt="{{img}}">
+            </div>
+            <div class="card-stacked">
+                <div class="card-content">
+                    <h2 class="header">{{email}}</h2>
+                    <p class="custom-1">{{firstName}}</p>
+                    <p class="custom-1">{{lastName}}</p>
+                </div>
+                <div class="card-action">
+                    <a href="/ankets/{{id}}">Посмотреть контакт</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{{else}}
+<strong>Зарегистрированных анкет не существует</strong>
+{{/each}}
+{{/if}}
+
+<!--<span>Тест обработки цен</span>-->
+<!--<span class="price">50000</span>-->
+<!--<span class="price">50000</span>-->

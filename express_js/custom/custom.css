@@ -1,3 +1,31 @@
 .nav-wrapper{
     padding: 0 2rem;
 }
+
+.crop_img_size{
+    height: 100%;
+    width: auto;
+    /*object-fit:cover;*/
+}
+
+
+.wrapper{
+    width: 300px;
+    height: 300px;
+}
+
+.exmpl{
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    /*align-items: center;*/
+}
+
+.custom-1{
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.price{
+    color: red;
+}

@@ -1,1 +1,34 @@
 <h1>Добавить анкету</h1>
+
+<form action="/add" method="POST">
+
+    <div class="input-field ">
+<!--        <i class="material-icons prefix">account_circle</i>-->
+        <input id="firstName" name="firstName" type="text" class="validate" required>
+        <label for="firstName">First Name</label>
+        <span class="helper-text" data-error="wrong" data-success="right">Введите имя</span>
+    </div>
+    <div class="input-field ">
+        <!--        <i class="material-icons prefix">account_circle</i>-->
+        <input id="secondName" name="secondName" type="text" class="validate" required>
+        <label for="secondName">Second Name</label>
+        <span class="helper-text" data-error="wrong" data-success="right">Введите фамилию</span>
+    </div>
+    <div class="input-field ">
+        <!--        <i class="material-icons prefix">account_circle</i>-->
+        <input id="email" name="email" type="text" class="validate" required>
+        <label for="email">email</label>
+        <span class="helper-text" data-error="Incorrect email format" data-success="right">Введите email</span>
+    </div>
+    <div class="input-field ">
+        <!--        <i class="material-icons prefix">account_circle</i>-->
+        <input id="img" name="img" type="text" class="validate" required>
+        <label for="img">Avatar url</label>
+        <span class="helper-text" data-error="wrong" data-success="right">Введите url аватара</span>
+    </div>
+
+    <button class="btn btn-primary">Добавить контакт</button>
+
+
+
+</form>

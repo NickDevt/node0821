@@ -4,6 +4,15 @@ const express = require('express')
 const path = require('path')
 //Подключение handlebars
 const expshb = require('express-handlebars')
+
+//После удаления подключения внутри app.get() мы должны привязать файлы маршрутизации к основному файлу
+//Это делается через импорт модулей + упоминание в app.use()
+const homeRoutes = require('./routes/home')
+const anketsRoutes = require('./routes/ankets')
+const addRoutes = require('./routes/add')
+const aboutRoutes = require('./routes/about')
+
+
 // В экспрессе сервер создается так
 const app = express()
 
@@ -23,41 +32,21 @@ app.set('views', 'views')
 
 //Подключаем кастомный файл css стилей в handlebars
 app.use(express.static('custom'))
+app.use(express.urlencoded({extended:true}))
 
 
-// В отличии от базового http функционала - express делает много стандартных вещей из коробки
-// Например он прописывает заголовки, контент тайп итд
-// Вторым аргументом метод рендер принимает объект, где можно указывать свойства страницы, например тайтл итд
-app.get('/', (req, res) => {
-    // res.status(200)
-    // res.sendFile(path.join(__dirname, 'views', 'index.html'))
-    // Следующая запись является методом handlebars
-    res.render('index',{
-        title: 'Главная страница',
-        ishome: true
-    })
-})
-
-app.get('/about', (req, res) => {
-    // res.status(200)
-    // res.sendFile(path.join(__dirname, 'views ', 'about.html'))
-    res.render('about', {
-        title: 'О нашей великой и могущественной орагнизации',
-        isabout: true
-    })
-})
-app.get('/ankets', (req, res) => {
-    res.render('ankets', {
-        title: 'Анкеты юзерсонов',
-        isankets: true
-    })
-})
-app.get('/add', (req, res) => {
-    res.render('add', {
-        title: 'Добавить новую анкету',
-        isadd:true
-    })
-})
+//Подключение файлов для маршрутизации
+//Данный вид подключения подразумевает, что в файлахс маршрутами указан полный путь, типа router.get('/ankets'   итд
+// app.use(homeRoutes)
+// app.use(anketsRoutes)
+// app.use(addRoutes)
+// app.use(aboutRoutes)
+//Но используется вариант с префиксами, прописанными в основном файле приложения (то есть тут)
+// Это позволяет видеть управлять маршрутом из основногшо файла
+app.use('/', homeRoutes)
+app.use('/ankets', anketsRoutes)
+app.use('/add', addRoutes)
+app.use('/about', aboutRoutes)
 
 
 
