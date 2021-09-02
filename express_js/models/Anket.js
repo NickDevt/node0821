@@ -5,25 +5,55 @@ const path = require('path')
 const {response, json, static} = require("express");
 
 class Anket {
-    constructor(firstName, secondName, email, img) {
+    constructor(firstName, secondName, email, img, price) {
         this.firstName = firstName
         this.secondName = secondName
         this.email = email
         this.img = img
+        this.price = price
         this.id = uuid()
+
     }
 
     toJSON() {
         return {
             firstName: this.firstName,
-            lastName: this.secondName,
+            secondName: this.secondName,
             email: this.email,
             img: this.img,
+            price: this.price,
             id: this.id
+
+
 
         }
     }
 
+    //Разобратся с обозначением static
+    //Метод для обновления контакта
+    static async update(anket) {
+        const ankets = await Anket.getAll()
+
+        const idx = ankets.findIndex(ank => ank.id === anket.id)
+        ankets[idx] = anket
+        return new Promise((resolve, reject) =>{
+            fs.writeFile(
+                path.join(__dirname, '..', 'data', 'ankets.json'),
+                JSON.stringify(ankets),
+                (err) => {
+                    if (err) {
+                        reject(err)
+                    } else {
+                        resolve()
+                        // console.log(this)
+                    }
+                }
+            )
+        })
+    }
+
+
+    // Метод для сохранения анкеты
     // Внутри класса для методов мы можем записывать функции в след виде
     // Про async/await  https://learn.javascript.ru/async-await
     async save() {
@@ -52,6 +82,7 @@ class Anket {
 
     }
     // Про static https://learn.javascript.ru/static-properties-methods
+    //Метод для получения всех свойств объекта
     static getAll(){
         return new Promise((resolve, reject) => {
             fs.readFile(
@@ -72,6 +103,7 @@ class Anket {
 
     }
 
+    //Метод  ядл получения по id
     static async getById(id) {
         const courses = await Anket.getAll()
         return courses.find(c => c.id === id)

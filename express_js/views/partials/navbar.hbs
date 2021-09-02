@@ -9,6 +9,8 @@
                 <li><a href="/">Главная страница</a></li>
             {{/if}}
 
+            <!--Синтаксис интересный, файлы hbs склеены с is и это работает ок-->
+
             {{#if isankets}}
                 <li class="active"><a href="/ankets">Анкеты</a></li>
             {{else}}
@@ -25,6 +27,12 @@
                 <li class="active"><a href="/about">About</a> </li>
             {{else}}
                 <li><a href="/about">About</a> </li>
+            {{/if}}
+
+            {{#if iscont-selection}}
+                <li class="active"><a href="/cont-selection">Выборка</a> </li>
+            {{else}}
+                <li><a href="/cont-selection">Выборка</a> </li>
             {{/if}}
 
         </ul>

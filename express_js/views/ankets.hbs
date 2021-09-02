@@ -14,10 +14,16 @@
                 <div class="card-content">
                     <h2 class="header">{{email}}</h2>
                     <p class="custom-1">{{firstName}}</p>
-                    <p class="custom-1">{{lastName}}</p>
+                    <p class="custom-1">{{secondName}}</p>
+                    <p class="custom-1">{{price}}</p>
                 </div>
                 <div class="card-action">
                     <a href="/ankets/{{id}}" target="_blank">Посмотреть контакт</a>
+                    <a href="/ankets/{{id}}/edit?allow=true">Редактировать контакт</a>
+                    <form class="mt15custom" action="/cont_selection/add" method="POST">
+                        <input type="hidden" name="id" value="{{id}}">
+                        <button type="submit" class="btn btn primary ">Добавить в выборку</button>
+                    </form>
                 </div>
             </div>
         </div>

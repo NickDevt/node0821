@@ -7,10 +7,13 @@ const expshb = require('express-handlebars')
 
 //После удаления подключения внутри app.get() мы должны привязать файлы маршрутизации к основному файлу
 //Это делается через импорт модулей + упоминание в app.use()
+//ТУТ МЫ УКАЗЫВАЕМ ПУТЬ ДО МАРШРУТНОГО ФАЙЛА JS, А В app.use МЫ ССЫЛАЕМСЯ ИМЕННО НА ЭТОТ ОБЪЕКТ
+// В ДАННОМ ФАЙЛЕ МЫ НЕ УКАЗЫВАЕМ .hbs ШАБЫ
 const homeRoutes = require('./routes/home')
 const anketsRoutes = require('./routes/ankets')
 const addRoutes = require('./routes/add')
 const aboutRoutes = require('./routes/about')
+const contSelectionRoutes = require('./routes/cont_selection')
 
 
 // В экспрессе сервер создается так
@@ -47,6 +50,7 @@ app.use('/', homeRoutes)
 app.use('/ankets', anketsRoutes)
 app.use('/add', addRoutes)
 app.use('/about', aboutRoutes)
+app.use('/cont_selection', contSelectionRoutes)
 
 
 
