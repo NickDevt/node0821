@@ -105,8 +105,8 @@ class Anket {
 
     //Метод  ядл получения по id
     static async getById(id) {
-        const courses = await Anket.getAll()
-        return courses.find(c => c.id === id)
+        const ankets = await Anket.getAll()
+        return ankets.find(c => c.id === id)
     }
 
 }

@@ -12,17 +12,23 @@ router.post('/add', async(req, res) =>{
     await mSelection.add(anket)
 
     // В респонсе как всегда указываем страницу
-    res.redirect('/cont-selection')
+    res.redirect('/cont_selection')
 })
 
 
 //Инициализируем саму страницу выборки (корзины)
 router.get('/', async (req, res) =>{
     const selection = await mSelection.fetch()
+    // console.log(selection)
+    // console.log(selection.contacts)
+    // selection.contacts.push('ew')
+    // console.log(selection.contacts)
+    // console.log(selection)
+
     res.render('cont-selection', {
         title: 'Выборка',
         isSelection: true,
-        ankets: selection.ankets,
+        ankets: selection.contacts,
         price: selection.price
     })
 })

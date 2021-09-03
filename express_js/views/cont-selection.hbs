@@ -1,2 +1,33 @@
 <h1>Страница выборки</h1>
 
+{{#if contacts.length}}
+    <table>
+        <thead>
+        <tr>
+            <th>Email</th>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Цена</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each contacts}}
+            <tr>
+                <td>{{email}}</td>
+                <td>{{firstName}}</td>
+                <td>{{secondName}}</td>
+                <td>{{count}}</td>
+                <td>{{price}}</td>
+                <td>
+                    <button class="btn btn-small">Удалить</button>
+                </td>
+            </tr>
+
+        {{/each}}
+
+        </tbody>
+    </table>
+    <p><strong>Цена: </strong><span class="price">{{price}}</span></p>
+{{else}}
+    <p>Список пуст</p>
+{{/if}}
