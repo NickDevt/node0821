@@ -10,7 +10,7 @@ router.post('/add', async(req, res) =>{
     //Для начала мы должны получить объект для добавления
     const anket = await Anket.getById(req.body.id)
     await mSelection.add(anket)
-
+    //
     // В респонсе как всегда указываем страницу
     res.redirect('/cont_selection')
 })
