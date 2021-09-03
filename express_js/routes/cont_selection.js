@@ -15,6 +15,14 @@ router.post('/add', async(req, res) =>{
     res.redirect('/cont_selection')
 })
 
+//Метод delete для выборки (в ajax режиме)
+router.delete('/remove/:id', async (req, res) =>{
+    console.log(req.params.id)
+    const selection = await mSelection.remove(req.params.id)
+
+    res.status(200).json(selection)
+})
+
 
 //Инициализируем саму страницу выборки (корзины)
 router.get('/', async (req, res) =>{
@@ -24,6 +32,8 @@ router.get('/', async (req, res) =>{
     // selection.contacts.push('ew')
     // console.log(selection.contacts)
     // console.log(selection)
+    // const test = selection
+    // console.log(test)
 
     res.render('cont-selection', {
         title: 'Выборка',

@@ -34,7 +34,7 @@ app.set('view engine', 'hbs')
 app.set('views', 'views')
 
 //Подключаем кастомный файл css стилей в handlebars
-app.use(express.static('custom'))
+app.use(express.static(path.join(__dirname,'custom')))
 app.use(express.urlencoded({extended:true}))
 
 

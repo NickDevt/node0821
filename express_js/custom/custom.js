@@ -1,6 +1,47 @@
 
+//Переменные, начинающиеся на $ это условное обозначение для указания на jQuery/JS объект
+//Это рекомендация
+const $selection = document.querySelector('#selection')
+if ($selection) {
+    $selection.addEventListener('click', event =>{
+        if (event.target.classList.contains('js-remove')) {
+            const id = event.target.dataset.id
+            // console.log(id)
+
+            //Дальше ajax блок
+            fetch('/cont_selection/remove/' + id,{
+                method: 'delete'
+            }).then(res => res.json())
+                .then(selection =>{
+                    // console.log(selection)
+                    if (selection.contacts.length){
+                        const html = selection.contacts.map(c =>{
+                            return `
+                            <tr>
+                                <td>${c.email}</td>
+                                <td>${c.firstName}</td>
+                                <td>${c.secondName}</td>
+                                <td>${c['count']}</td>
+                                <td>${c.price}</td>
+                                <td>
+                                    <!--Класс js-remove для удаления из корзины-->
+                                    <button class="btn btn-small js-remove" data-id="{{id}}">Удалить</button>
+                                </td>
+                            </tr>
+                            `
+                        }).join('')
+                        $selection.querySelector('tbody').innerHTML = html
+                        $selection.querySelector('.price').textContent = selection.price
+                    }else{
+                        $selection.innerHTML = '<p>Список пуст</p>'
+                    }
+                })
 
 
+
+        }
+    })
+}
 
 
 // const aa = (a) => {

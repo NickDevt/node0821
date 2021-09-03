@@ -1,17 +1,21 @@
 <h1>Страница выборки</h1>
 
-{{#if contacts.length}}
+<!--div selection создается для более удобного взаимодействия с элементами внутри
+-->
+<div id="selection">
+{{#if ankets.length}}
     <table>
         <thead>
         <tr>
             <th>Email</th>
             <th>Имя</th>
             <th>Фамилия</th>
+            <th>Количество</th>
             <th>Цена</th>
         </tr>
         </thead>
         <tbody>
-        {{#each contacts}}
+        {{#each ankets}}
             <tr>
                 <td>{{email}}</td>
                 <td>{{firstName}}</td>
@@ -19,7 +23,8 @@
                 <td>{{count}}</td>
                 <td>{{price}}</td>
                 <td>
-                    <button class="btn btn-small">Удалить</button>
+                    <!--Класс js-remove для удаления из корзины-->
+                    <button class="btn btn-small js-remove" data-id="{{id}}">Удалить</button>
                 </td>
             </tr>
 
@@ -31,3 +36,4 @@
 {{else}}
     <p>Список пуст</p>
 {{/if}}
+</div>

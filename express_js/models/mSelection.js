@@ -46,6 +46,37 @@ class MSelection {
         })
 
     }
+
+    static async remove(id) {
+        const selection = await MSelection.fetch()
+
+        const idx = selection.contacts.findIndex(a => a.id === id)
+        const anket = selection.contacts[idx]
+        //Логика для удаления контакта с
+        if (anket.count === 1){
+            //Удалить
+            //Ещё раз, запись перебора массива это то же самое, что на языке питона
+            // for i in с:
+            //      if c.id != id
+            selection.contacts = selection.contacts.filter(a => a.id !== id)
+        }else {
+            //Уменьшить значение
+            selection.contacts[idx].count--
+        }
+        selection.price -= anket.price
+
+        return new Promise((resolve, reject) =>{
+            fs.writeFile(p, JSON.stringify(selection), err =>{
+                if(err){
+                    reject(err)
+                }else {
+                    resolve(selection)
+                }
+            })
+        })
+
+    }
+
     //Метод доставания инфы из корзины выборки
     static async fetch() {
         return new Promise((resolve, reject) =>{
