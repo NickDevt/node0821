@@ -1,0 +1,50 @@
+[
+  {
+    "Головная боль": {
+      "Сила": 0,
+      "Локализация": 0
+    },
+
+    "Онемение": {
+      "Сила": 0,
+      "Локализация": 0
+    },
+
+    "Дополнительные факторы":{
+      "Часов сна": 0,
+      "Алкоголь накануне": false,
+      "Alcohol today": false,
+      "Smoking": false,
+      "Stress": false,
+      "OverTired": false,
+      "Orvi": false,
+      "additionalFactor": false
+    },
+    "date": "date"
+
+  },
+
+  {
+    "Головная боль": {
+      "Сила": 0,
+      "Локализация": 0
+    },
+
+    "Онемение": {
+      "Сила": 0,
+      "Локализация": 0
+    },
+
+    "Дополнительные факторы":{
+      "Часов сна": 0,
+      "Алкоголь накануне": false,
+      "Alcohol today": false,
+      "Smoking": false,
+      "Stress": false,
+      "OverTired": false,
+      "Orvi": false,
+      "additionalFactor": false
+    }
+
+  }
+]

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<button id="id">Кнопочка</button>
+
+<div id="fd">
+
+</div>
+
+
+<script>
+  const button = document.querySelector('button#id')
+  const div = document.querySelector('div#fd')
+
+  const changeDiv = () => {
+    return new Promise(resolve => {
+      addEventListener('click', ()=>{
+          console.log(div)
+          resolve(div.innerHTML = 'Еба на')
+      })
+    })
+  }
+changeDiv()
+
+</script>
+
+</body>
+</html>
