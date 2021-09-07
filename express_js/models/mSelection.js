@@ -16,8 +16,8 @@ class MSelection {
     static async add(anket){
         //Этот метод достает данные из selection json
         const selection = await MSelection.fetch()
-        // Находим индексы для объектов из массива contacts из selection JSON
-        // Находит индекс того объекта из массива, который по id соответствует полученному ранее anket.id
+        // Находим айди для объектов из массива contacts из selection JSON
+        // Находит айди того объекта из массива, который по id соответствует полученному ранее anket.id
         // Если id нет - findIndex должен вернуть -1, тогда candidate будет undefined и вернет false
         const idx = selection.contacts.findIndex(cont => cont.id === anket.id)
         //  ...тогда candidate будет undefined

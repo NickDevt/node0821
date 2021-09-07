@@ -1,10 +1,10 @@
 <div class="container main-page">
 
-<h1>Великий регистратор недомогания</h1>
+<h1>Регистратор</h1>
 
 <div class="row">
     <div class="col s12 m5 white">
-        <h4>Головная боль</h4>
+        <h4>ГБ</h4>
 
         <form action="#">
             <p>
@@ -27,7 +27,7 @@
     </div>
     <div class="col s12 m2"></div>
     <div class="col s12 m5 white">
-        <h4>Онемение</h4>
+        <h4>Онм</h4>
 
         <form action="#">
             <p>
@@ -66,8 +66,55 @@
                 </p>
                 </form>
         </div>
-        <div class="col s12">{{jsona}}</div>
+
     </div>
 
+    {{#if jsona.length}}
+        {{#each jsona}}
+            <div class="row">
+                <h3>Добавлено в {{this.timeOfSend}}</h3>
+                <div class="col sm-3">
+                    <p>Сила <span>{{this.gb.power}}</span></p>
+                    <p>Локализация <span>{{this.gb.local}}</span></p>
+                    <p>Начало в <span>{{this.gb.startTime}}</span></p>
+                    <p>Тейблы <span>{{this.gb.tables}}</span></p>
+                    <p>Эффективность <span>{{this.gb.tabEffect}}</span></p>
+                </div>
+                <div class="col sm-3">
+                    <p><span></span></p>
+                    <p><span></span></p>
+                    <p><span></span></p>
+
+                </div>
+                <div class="col sm-3">
+                    <p><span></span></p>
+                    <p><span></span></p>
+                    <p><span></span></p>
+
+                </div>
+                <div class="col sm-3">
+                    <p><span></span></p>
+                    <p><span></span></p>
+
+
+                </div>
+            </div>
+
+
+
+
+        {{/each}}
+
+
+
+        {{/if}}
+
+
+    <script>
+        const date = new Date()
+        const msUTC = Date.parse(date)
+        alert(msUTC)
+
+    </script>
 
 </div>

@@ -1,50 +1,24 @@
-[
-  {
-    "Головная боль": {
-      "Сила": 0,
-      "Локализация": 0
-    },
-
-    "Онемение": {
-      "Сила": 0,
-      "Локализация": 0
-    },
-
-    "Дополнительные факторы":{
-      "Часов сна": 0,
-      "Алкоголь накануне": false,
-      "Alcohol today": false,
-      "Smoking": false,
-      "Stress": false,
-      "OverTired": false,
-      "Orvi": false,
-      "additionalFactor": false
-    },
-    "date": "date"
-
+[{
+  "gb": {
+    "power": 0,
+    "local": 0,
+    "startTime": "19:00",
+    "tables": 0,
+    "tabEffect": 0
   },
-
-  {
-    "Головная боль": {
-      "Сила": 0,
-      "Локализация": 0
-    },
-
-    "Онемение": {
-      "Сила": 0,
-      "Локализация": 0
-    },
-
-    "Дополнительные факторы":{
-      "Часов сна": 0,
-      "Алкоголь накануне": false,
-      "Alcohol today": false,
-      "Smoking": false,
-      "Stress": false,
-      "OverTired": false,
-      "Orvi": false,
-      "additionalFactor": false
-    }
-
-  }
-]
+  "onem": {
+    "power": 0,
+    "local": 0,
+    "startTime": "19:00"
+  },
+  "factors": {
+    "factor1": 1,
+    "factor2": 0,
+    "factor3": 1
+  },
+  "addInfo": {
+    "addInfo1": "some add info",
+    "addInfo2": "some add info"
+  },
+  "timeOfSend": "12:00"
+}]

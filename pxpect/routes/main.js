@@ -4,8 +4,9 @@ const mModel = require('../models/mModel')
 
 router.get('/', async (req, res) => {
 
-    jsona = await mModel.getAll()
+    const jsona = await mModel.getAll()
     console.log(jsona)
+    // console.dir(jsona)
 
     res.render('main_page', {
         title: 'Главная страница',
