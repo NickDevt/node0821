@@ -1,0 +1,4 @@
+
+//Добавить данные из файла
+copy main(fio, name, lastname, patronymic, sex, prof, city, birth, source, email, phone, place_of_work,
+    salary,region,edu_place,edu_degree,edu_year,edu_full) FROM 'D:\contacts.csv' DELIMITER ',' CSV
